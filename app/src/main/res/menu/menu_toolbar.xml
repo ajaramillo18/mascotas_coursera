@@ -7,5 +7,15 @@
         android:orderInCategory="102"
         app:showAsAction="always"
         android:icon="@drawable/icons8_hotel_24"    />
+    <item
+        android:id="@+id/itemContacto"
+        android:orderInCategory="103"
+        android:title="Contacto"
+        />
+    <item
+        android:id="@+id/itemAcercaDe"
+        android:title="Acerca de"
+        android:orderInCategory="104"
+        />
 
 </menu>
