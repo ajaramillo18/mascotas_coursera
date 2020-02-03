@@ -80,13 +80,17 @@ public class RecyclerViewFragment extends Fragment {
         listaMascotas.setLayoutManager(llm);
 
         ArrayList<Mascota> mascotaArrayList = new ArrayList<>();
-        mascotaArrayList.add(new Mascota(R.drawable.perro_escucha,"Canelo", 23));
+
+        //OJO aqui por si falla, checar el context
+        ConstructorMascotas constructorMasc = new ConstructorMascotas(this.getContext());
+        mascotaArrayList = constructorMasc.obtenerDatos();
+        /*mascotaArrayList.add(new Mascota(R.drawable.perro_escucha,"Canelo", 23));
         mascotaArrayList.add(new Mascota(R.drawable.perro_lanudo,"Cali", 10));
         mascotaArrayList.add(new Mascota(R.drawable.perro_wero,"Chispa", 30));
         mascotaArrayList.add(new Mascota(R.drawable.cachorro_rottweiler,"Angel", 30));
-        mascotaArrayList.add(new Mascota(R.drawable.xolo,"Dante", 30));
+        mascotaArrayList.add(new Mascota(R.drawable.xolo,"Dante", 30));*/
 
-        MascotaAdaptador adaptador = new MascotaAdaptador(mascotaArrayList);
+        MascotaAdaptador adaptador = new MascotaAdaptador(mascotaArrayList,getActivity());
 
         listaMascotas.setAdapter(adaptador);
 

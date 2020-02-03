@@ -1,5 +1,6 @@
 package com.coursera.miprimer;
 
+import android.app.Activity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,8 +17,10 @@ import java.util.ArrayList;
 public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.MascotaViewHolder> {
 
     ArrayList<Mascota> mascotas;
-    public MascotaAdaptador(ArrayList<Mascota> mascotas) {
+    Activity activity;
+    public MascotaAdaptador(ArrayList<Mascota> mascotas, Activity activity) {
         this.mascotas = mascotas;
+        this.activity = activity;
     }
 
 
@@ -51,7 +54,14 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Log.v("ImageButton", "Clicked!");
-                tvRanking2.setText(String.valueOf(mascota.getRanking()+1));
+                //tvRanking2.setText(String.valueOf(mascota.getRanking()+1));
+                ConstructorMascotas constructorMascotas = new ConstructorMascotas(activity);
+                constructorMascotas.darLikeMascota(mascota);
+                holder.tvRanking.setText(String.valueOf(constructorMascotas.obtenerLikesMascota(mascota)));//String.valueOf(mascota.getRanking()));
+               // contactoViewHolder.tvLikes.setText(constructorContactos.obtenerLikesContacto(contacto) + " " + activity.getString(R.string.likes));
+
+
+
             }
         });
     }

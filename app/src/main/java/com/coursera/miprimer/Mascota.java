@@ -5,11 +5,15 @@ public class Mascota {
     private int foto;
     private String nombre;
     private int ranking;
+    private int id;
 
     public Mascota(int foto, String nombre, int ranking) {
         this.foto = foto;
         this.nombre = nombre;
         this.ranking = ranking;
+    }
+    public Mascota(){
+
     }
 
     public int getFoto() {
@@ -37,5 +41,11 @@ public class Mascota {
     }
 
 
+    public int getId() {
+        return id;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
 }

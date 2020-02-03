@@ -35,7 +35,7 @@ public class MascotasFavoritas extends AppCompatActivity {
         mascotaArrayList.add(new Mascota(R.drawable.cachorro_rottweiler,"Angel", 30));
         mascotaArrayList.add(new Mascota(R.drawable.xolo,"Dante", 30));
 
-        MascotaAdaptador adaptador = new MascotaAdaptador(mascotaArrayList);
+        MascotaAdaptador adaptador = new MascotaAdaptador(mascotaArrayList, this);
 
         listaMascotas.setAdapter(adaptador);
 
